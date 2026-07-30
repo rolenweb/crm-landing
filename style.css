@@ -764,16 +764,18 @@ p {
 .footer__nav-title {
   font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-text);
   margin-bottom: 18px;
 }
 
 .footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 32px;
+  row-gap: 12px;
 }
 
 .footer__links a {
@@ -946,7 +948,9 @@ p {
   }
 
   .footer__links {
-    align-items: center;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    justify-items: center;
   }
 
   .header__cta {
