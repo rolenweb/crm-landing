@@ -111,14 +111,22 @@
   /* ===================== COOKIE CONSENT ===================== */
   const cookieBanner = document.getElementById('cookieBanner');
   const cookieAccept = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
   const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
 
-  if (cookieBanner && cookieAccept && !localStorage.getItem(COOKIE_CONSENT_KEY)) {
+  // TODO: на финальном этапе вернуть проверку `!localStorage.getItem(COOKIE_CONSENT_KEY)`,
+  // сейчас отключена для тестирования — баннер показывается при каждой перезагрузке.
+  if (cookieBanner && cookieAccept) {
     setTimeout(() => cookieBanner.classList.add('is-visible'), 600);
   }
 
   cookieAccept?.addEventListener('click', () => {
-    localStorage.setItem(COOKIE_CONSENT_KEY, '1');
+    // TODO: на финальном этапе вернуть localStorage.setItem(COOKIE_CONSENT_KEY, '1');
+    cookieBanner.classList.remove('is-visible');
+  });
+
+  cookieDecline?.addEventListener('click', () => {
+    // TODO: на финальном этапе вернуть localStorage.setItem(COOKIE_CONSENT_KEY, '0');
     cookieBanner.classList.remove('is-visible');
   });
 
