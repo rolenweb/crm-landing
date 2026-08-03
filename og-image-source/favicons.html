@@ -1,0 +1,45 @@
+<!--
+  Источник для favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png (180x180).
+  Как получить PNG:
+  1. Открой этот файл в Chrome.
+  2. Открой DevTools (F12) → вкладка Elements.
+  3. В дереве DOM найди нужный <svg class="icon" data-size="...">.
+  4. ПКМ по нему → Capture node screenshot.
+  5. Сохрани файл с именем по атрибуту data-file и положи в корень проекта
+     (рядом с index.html): favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png.
+-->
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+<style>
+  body { background:#fff; display:flex; gap:40px; align-items:flex-end; padding:40px; font-family:sans-serif; }
+  figure { margin:0; text-align:center; }
+  figcaption { margin-top:8px; font-size:12px; color:#666; }
+</style>
+</head>
+<body>
+  <figure>
+    <svg class="icon" data-size="16" data-file="favicon-16x16.png" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 28 28">
+      <rect width="28" height="28" rx="8" fill="#4CBBAB"/>
+      <text x="14" y="19.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="16" fill="white">S</text>
+    </svg>
+    <figcaption>16x16</figcaption>
+  </figure>
+  <figure>
+    <svg class="icon" data-size="32" data-file="favicon-32x32.png" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 28 28">
+      <rect width="28" height="28" rx="8" fill="#4CBBAB"/>
+      <text x="14" y="19.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="16" fill="white">S</text>
+    </svg>
+    <figcaption>32x32</figcaption>
+  </figure>
+  <figure>
+    <svg class="icon" data-size="180" data-file="apple-touch-icon.png" xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 28 28">
+      <rect width="28" height="28" rx="8" fill="#4CBBAB"/>
+      <text x="14" y="19.6" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="16" fill="white">S</text>
+    </svg>
+    <figcaption>180x180 (apple-touch-icon)</figcaption>
+  </figure>
+</body>
+</html>

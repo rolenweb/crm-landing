@@ -1201,7 +1201,7 @@ p {
 
 .notfound__visual {
   width: 100%;
-  max-width: 440px;
+  max-width: 920px;
   margin-bottom: 24px;
 }
 
@@ -1223,40 +1223,9 @@ p {
   justify-content: center;
 }
 
-.notfound-ring {
-  animation: notfound-spin 18s linear infinite;
-  transform-origin: 240px 180px;
-}
-
-@keyframes notfound-spin {
-  to { stroke-dashoffset: -144; }
-}
-
-.notfound-spark {
-  animation: notfound-flicker 1.8s ease-in-out infinite;
-}
-
-@keyframes notfound-flicker {
-  0%, 100% { opacity: 1; }
-  45% { opacity: 1; }
-  50% { opacity: 0.15; }
-  55% { opacity: 1; }
-  80% { opacity: 0.4; }
-}
-
-.notfound-bot {
-  animation: notfound-float 3.5s ease-in-out infinite;
-  transform-origin: 85px 280px;
-}
-
-@keyframes notfound-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 .notfound-eye {
   animation: notfound-blink 4s ease-in-out infinite;
-  transform-origin: 98px 272px;
+  transform-origin: 9px -2px;
 }
 
 @keyframes notfound-blink {
@@ -1266,26 +1235,35 @@ p {
 
 .notfound-antenna {
   animation: notfound-pulse-dot 1.6s ease-in-out infinite;
-  transform-origin: 85px 224px;
-}
-
-.notfound-pulse {
-  animation: notfound-pulse-dot 1.5s ease-in-out infinite;
+  transform-origin: 0 -31px;
 }
 
 @keyframes notfound-pulse-dot {
-  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
   50% { opacity: 1; transform: scale(1.15); }
 }
 
+.notfound-x {
+  animation: notfound-x-pulse 2s ease-in-out infinite;
+  transform-origin: 730px 232px;
+}
+
+@keyframes notfound-x-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .notfound-ring,
-  .notfound-spark,
-  .notfound-bot,
   .notfound-eye,
   .notfound-antenna,
-  .notfound-pulse {
+  .notfound-x {
     animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .notfound {
+    padding: 64px 0 100px;
   }
 }
 
