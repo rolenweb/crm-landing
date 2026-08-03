@@ -80,33 +80,35 @@
     errorEl.textContent = '';
   };
 
-  nameInput.addEventListener('input', () => clearFieldError(nameInput, nameError));
-  phoneInput.addEventListener('input', () => clearFieldError(phoneInput, phoneError));
+  if (form && nameInput && phoneInput && nameError && phoneError && formSuccess) {
+    nameInput.addEventListener('input', () => clearFieldError(nameInput, nameError));
+    phoneInput.addEventListener('input', () => clearFieldError(phoneInput, phoneError));
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
 
-    const isNameValid = validateField(
-      nameInput,
-      nameError,
-      (value) => value.length >= 2,
-      'Введите ваше имя'
-    );
+      const isNameValid = validateField(
+        nameInput,
+        nameError,
+        (value) => value.length >= 2,
+        'Введите ваше имя'
+      );
 
-    const isPhoneValid = validateField(
-      phoneInput,
-      phoneError,
-      (value) => phonePattern.test(value),
-      'Введите корректный номер телефона'
-    );
+      const isPhoneValid = validateField(
+        phoneInput,
+        phoneError,
+        (value) => phonePattern.test(value),
+        'Введите корректный номер телефона'
+      );
 
-    if (!isNameValid || !isPhoneValid) {
-      return;
-    }
+      if (!isNameValid || !isPhoneValid) {
+        return;
+      }
 
-    form.classList.add('is-hidden');
-    formSuccess.classList.add('is-visible');
-  });
+      form.classList.add('is-hidden');
+      formSuccess.classList.add('is-visible');
+    });
+  }
 
   /* ===================== COOKIE CONSENT ===================== */
   const cookieBanner = document.getElementById('cookieBanner');
