@@ -120,7 +120,9 @@ p {
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  line-height: 1;
   border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
   white-space: nowrap;
 }
@@ -140,7 +142,7 @@ p {
 .btn--secondary {
   background: transparent;
   color: var(--color-text);
-  border: 1.5px solid var(--color-border);
+  border-color: var(--color-border);
 }
 
 .btn--secondary:hover {
@@ -956,5 +958,81 @@ p {
   .header__cta {
     display: none;
   }
+
+  .cookie-banner {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    padding: 20px;
+  }
+
+  .cookie-banner__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .cookie-banner__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-banner__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===================== COOKIE CONSENT ===================== */
+.cookie-banner {
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 24px 28px;
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cookie-banner__text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+  flex-shrink: 0;
+  min-width: 140px;
+  text-align: center;
+  white-space: nowrap;
 }
 

@@ -108,6 +108,20 @@
     formSuccess.classList.add('is-visible');
   });
 
+  /* ===================== COOKIE CONSENT ===================== */
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieAccept = document.getElementById('cookieAccept');
+  const COOKIE_CONSENT_KEY = 'cookieConsentAccepted';
+
+  if (cookieBanner && cookieAccept && !localStorage.getItem(COOKIE_CONSENT_KEY)) {
+    setTimeout(() => cookieBanner.classList.add('is-visible'), 600);
+  }
+
+  cookieAccept?.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, '1');
+    cookieBanner.classList.remove('is-visible');
+  });
+
   /* ===================== SMOOTH ANCHOR SCROLL (FALLBACK) ===================== */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
